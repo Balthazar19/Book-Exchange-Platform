@@ -1,0 +1,76 @@
+package coursework.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import static org.hibernate.internal.util.StringHelper.count;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Comment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String title;
+    private String body;
+    private LocalDateTime timestamp;
+    @OneToMany(mappedBy = "parentComment", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private List<Comment> replies;
+    @ManyToOne
+    private Comment parentComment;
+    @ManyToOne
+    private Client client;
+    @ManyToOne
+    private Chat chat;
+    @ManyToOne
+    private Client commentOwner;
+
+
+    public Comment(String title, String body, LocalDateTime timestamp, List<Comment> replies, Comment parentComment, Client client) {
+        this.title = title;
+        this.body = body;
+        this.timestamp = timestamp;
+        this.replies = replies;
+        this.parentComment = parentComment;
+        this.client = client;
+    }
+
+    public Comment(String title, String body, Client client, Client commentOwner) {
+        this.title = title;
+        this.body = body;
+        this.client = client;
+        this.commentOwner = commentOwner;
+        this.timestamp = LocalDateTime.now();
+    }
+
+    public Comment(String title, String body, Comment parentComment, Client commentOwner) {
+        this.title = title;
+        this.body = body;
+        this.parentComment = parentComment;
+        this.commentOwner = commentOwner;
+        this.timestamp = LocalDateTime.now();
+    }
+
+    public Comment(String title, String body, Client client) {
+        this.title = title;
+        this.body = body;
+        this.client = client;
+    }
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        String formattedTimestamp = timestamp.format(formatter);
+        return formattedTimestamp + " " + commentOwner.getName() + " " + commentOwner.getSurname() + ": " + title + " \"" + body + "\" " + "[" + replies.size() + "]";
+    }
+}

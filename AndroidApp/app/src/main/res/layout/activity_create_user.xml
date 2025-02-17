@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Login" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Password" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Name" />
+
+    <EditText
+        android:id="@+id/editTextSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Surname" />
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Address" />
+
+    <EditText
+        android:id="@+id/editTextBirthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Birth_Date"
+        android:focusable="false"
+        android:clickable="true" />
+
+    <EditText
+        android:id="@+id/editTextPhoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Phone_Number"
+        android:visibility="gone" />
+
+    <Switch
+        android:id="@+id/switchUserType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Create_Admin" />
+
+    <Button
+        android:id="@+id/buttonCreateUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Create_User" />
+
+</LinearLayout>

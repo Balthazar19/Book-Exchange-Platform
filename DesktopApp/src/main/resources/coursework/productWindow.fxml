@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.ComboBox?>
+<AnchorPane prefHeight="400.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coursework.fxControllers.ProductWindow">
+    <children>
+        <ListView fx:id="publicationsListField" layoutX="21.0" layoutY="14.0" onMouseClicked="#loadPublisherData" prefHeight="374.0" prefWidth="222.0" />
+        <TextField fx:id="authorField" layoutX="268.0" layoutY="21.0" promptText="Author" />
+        <TextField fx:id="titleField" layoutX="269.0" layoutY="58.0" promptText="Title" />
+        <TextField fx:id="editorField" layoutX="270.0" layoutY="97.0" promptText="Editor" />
+        <ComboBox fx:id="frequencyField" layoutX="270.0" layoutY="135.0" promptText="Frequency" />
+        <TextField fx:id="issueNumberField" layoutX="271.0" layoutY="176.0" promptText="Issue Number" />
+        <DatePicker fx:id="publicationDate" layoutX="257.0" layoutY="217.0" promptText="Publication date" />
+        <TextField fx:id="publisherField" layoutX="270.0" layoutY="256.0" promptText="Publisher" />
+        <ComboBox fx:id="demographicField" layoutX="271.0" layoutY="295.0" promptText="Demographic" />
+        <TextField fx:id="illustratorField" layoutX="434.0" layoutY="21.0" promptText="Illustrator" />
+        <CheckBox fx:id="isColorChk" layoutX="477.0" layoutY="62.0" mnemonicParsing="false" text="Is Color" />
+        <ComboBox fx:id="originalLanguageField" layoutX="435.0" layoutY="97.0" promptText="Original language" />
+        <TextField fx:id="volumeNumberField" layoutX="436.0" layoutY="135.0" promptText="Volume number" />
+        <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#createNewPublication" text="Add" />
+        <Button layoutX="378.0" layoutY="361.0" mnemonicParsing="false" onAction="#updatePublisher" text="Update" />
+        <Button layoutX="489.0" layoutY="361.0" mnemonicParsing="false" onAction="#deletePublication" text="Delete" />
+        <RadioButton fx:id="bookChk" layoutX="269.0" layoutY="330.0" mnemonicParsing="false" onAction="#disableFields" selected="true" text="Book">
+            <toggleGroup>
+                <ToggleGroup fx:id="PublicationType" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="mangaChk" layoutX="331.0" layoutY="330.0" mnemonicParsing="false" onAction="#disableFields" text="Manga" toggleGroup="$PublicationType" />
+        <RadioButton fx:id="periodicalChk" layoutX="406.0" layoutY="330.0" mnemonicParsing="false" onAction="#disableFields" text="Periodical" toggleGroup="$PublicationType" />
+        <ComboBox fx:id="formatField" layoutX="437.0" layoutY="176.0" promptText="Format" />
+        <ComboBox fx:id="genreField" layoutX="437.0" layoutY="217.0" promptText="Genre" />
+        <TextField fx:id="isbnField" layoutX="439.0" layoutY="256.0" promptText="isbn" />
+        <ComboBox fx:id="languageField" layoutX="439.0" layoutY="295.0" promptText="Language" />
+        <TextField fx:id="pageCountField" layoutX="628.0" layoutY="21.0" promptText="Page Count" />
+        <TextField fx:id="publicationYearField" layoutX="628.0" layoutY="58.0" promptText="Publication Year" />
+        <TextArea fx:id="summaryField" layoutX="603.0" layoutY="102.0" prefHeight="200.0" prefWidth="200.0" promptText="Summary" />
+    </children>
+</AnchorPane>

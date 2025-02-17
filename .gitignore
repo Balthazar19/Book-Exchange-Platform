@@ -1,0 +1,89 @@
+# === General ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# === AndroidApp ===
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/build/
+/captures/
+/.externalNativeBuild/
+/.cxx/
+/local.properties
+
+# Gradle
+.gradle/
+/build/
+/gradle/
+/app/build/
+/captures/
+
+# Keystore files (if any, uncomment to ignore)
+# *.jks
+# *.keystore
+
+# === DesktopApp (Java/Maven) ===
+target/
+out/
+*.log
+
+# Maven specific
+.mvn/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IntelliJ IDEA
+.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code
+.vscode/
+
+# === Excluded Executables and Binaries ===
+*.class
+*.jar
+*.war
+*.ear
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+
+# === Ignore dependency folders ===
+node_modules/
+vendor/
